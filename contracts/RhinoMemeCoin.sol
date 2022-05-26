@@ -15,12 +15,12 @@ contract RHINO is ERC20, Ownable, ERC20Burnable {
     }
 
     function mint(address to, uint256 amount) public onlyOwner {
-        _mint(to, amount *10**18);
-        emit additionalTokensMinted(msg.sender, amount *10**18, "Additional tokens minted.");
+        _mint(to, amount );
+        emit additionalTokensMinted(msg.sender, amount, "Additional tokens minted.");
     }
 
     function burn(uint256 amount) public override onlyOwner {
-        _burn(msg.sender, amount *10**18);
-        emit tokensBurned(msg.sender, amount *10**18, "Tokens burned.");
+        _burn(msg.sender, amount );
+        emit tokensBurned(msg.sender, amount , "Tokens burned.");
     }
 }
